@@ -4,16 +4,17 @@ from string import Template # substitute variables inside text with $
 from pathlib import Path # similar to os.path # access index.html
 
 # wrapped into template to make it a template object (we can use $)
-html = Template(Path('index.html').read_text()) # to read html as string
+html = Template(Path('index.html').read_text())
 
 email = EmailMessage()
-email['from'] = 'Francesco'
-email['to'] = 'francescogp9898@hotmail.com'
-email['subject'] = 'Info'
+email['from'] = '**********'        # name of the recipient
+email['to'] = '*******@***.***'     # email of the recipient
+email['subject'] = '*******'        # subject of the e-mail
 
-email.set_content(html.substitute({'name': 'Francesco', 'age': '21', 'city': 'New York' }), 'html')
+# creating e-mail substituting vaariables with values
+email.set_content(html.substitute({'name': '*****', 'age': '**', 'city': '***' }), 'html')
 
-# using smtp server to log in and send email
+
 with smtplib.SMTP(host = 'smtp.gmail.com', port=587) as smtp: # sending from gmail
     # setup
     smtp.ehlo()
