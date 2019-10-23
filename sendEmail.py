@@ -14,13 +14,16 @@ email['subject'] = 'Info'
 email.set_content(html.substitute({'name': 'Francesco', 'age': '21', 'city': 'New York' }), 'html')
 
 # using smtp server to log in and send email
-
-with smtplib.SMTP(host = 'smtp.gmail.com', port=587) as smtp:
+with smtplib.SMTP(host = 'smtp.gmail.com', port=587) as smtp: # sending from gmail
     # setup
-    smtp.ehlo() # defining server "hello"
-    smtp.starttls() # encryption mechanism (secure connection)
+    smtp.ehlo()
+    smtp.starttls()
     
     # connecting to email account
-    smtp.login('francescogpecora@gmail.com','pioonerddjsX1..')
+    smtp.login('*************@gmail.com','*************') # insert your email and password
     smtp.send_message(email)
+    
     print('Email Sent!')
+
+
+
