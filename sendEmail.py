@@ -23,7 +23,7 @@ with smtplib.SMTP(host = 'smtp.gmail.com', port=587) as smtp: # sending from gma
             if line == ['']:
                 break
 
-            # selecting information from input file (without white spaces)
+            # selecting information from input file (without empty spaces)
             email_address = line[0].strip()
             name = line[1].strip()
             age = line [2].strip()
